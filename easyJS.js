@@ -1,0 +1,19 @@
+export function httpRequest(url, method = null, json = null) {
+
+    if (json == null) {
+        return fetch(url)
+        .then(response => response.json());
+    }
+    else {
+        json = JSON.stringify(json)
+        return fetch(url, {
+            method: method,
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json"
+              },
+            body: json
+        })
+        .then(response => response.json())
+    }
+}
