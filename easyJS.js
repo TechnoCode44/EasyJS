@@ -23,3 +23,7 @@ export function httpRequest(url, method = null, json = null) {
 export function setCookie(name, value) {
     document.cookie = `${name}=${value}; expires=Thu, 1 January 2099 12:00:00 UTC; path=/`;
 }
+
+export function removeCookie(name) {
+    document.cookie = `${name}=bye; expires=Thu, 1 January 1234 12:00:00 UTC; path=/`
+}
