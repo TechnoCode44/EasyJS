@@ -25,5 +25,19 @@ export function setCookie(name, value) {
 }
 
 export function removeCookie(name) {
-    document.cookie = `${name}=bye; expires=Thu, 1 January 1234 12:00:00 UTC; path=/`
+    document.cookie = `${name}=bye; expires=Thu, 1 January 1234 12:00:00 UTC; path=/`;
+}
+
+export function getCookie(name) {
+    const cookiesAsString = decodeURIComponent(document.cookie);
+    const cookiesArray = cookiesAsString.split("; ");
+    
+    for (let i = 0; i < cookiesArray.length; i++) {
+        let cookie = cookiesArray[i];
+        if (cookie.indexOf(name) == 0) {
+            let cookieValue = cookie.substring(name.length + 1);
+            return cookieValue;
+        }
+    }
+    return null;
 }
