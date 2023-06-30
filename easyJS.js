@@ -17,3 +17,9 @@ export function httpRequest(url, method = null, json = null) {
         .then(response => response.json())
     }
 }
+
+// Cookies section
+
+export function setCookie(name, value) {
+    document.cookie = `${name}=${value}; expires=Thu, 1 January 2099 12:00:00 UTC; path=/`;
+}
