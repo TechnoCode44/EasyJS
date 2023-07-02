@@ -26,3 +26,22 @@ httpRequest("https://reqres.in/api/users", "POST", {
     console.log(data)
 })
 ```
+
+## Cookies
+
+Under the [Data Protection Act 2018](https://www.gov.uk/data-protection) by law you need to **ASK FOR CONSENT** for collection of cookies.
+
+There are three functions for handerling cookies:
+
+- `setCookie()` to create cookies or change there value
+- `removeCookie()` to delete a cookie
+- `getCookie()` to get the value of a cookie
+
+```javascript
+import { setCookie, removeCookie, getCookie } from "./easyJS.js";
+
+setCookie("name", "Foo") // Creates a cookie called "name" with the value of "Foo"
+getCookie("name") // Returns the value "Foo"
+removeCookie("name") // Deletes the cookie called "name"
+
+```
